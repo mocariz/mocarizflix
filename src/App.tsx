@@ -14,23 +14,17 @@ const App = () => {
       <Menu />
     
       <BannerMain
-        videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
+        videoTitle={dadosIniciais.categorias[0].videos[0].title}
         url={dadosIniciais.categorias[0].videos[0].url}
-        videoDescription="teste"
+        videoDescription="O que faz uma desenvolvedora front-end?"
       />
 
-      <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[0]}
-      />
-
-      <Carousel 
-        category={dadosIniciais.categorias[1]}
-      />
-
-      <Carousel 
-        category={dadosIniciais.categorias[2]}
-      />
+      {dadosIniciais.categorias.map((item: any) => (
+        <Carousel 
+          ignoreFirstVideo
+          category={item}
+        />
+      ))}
 
       <Footer />
     </div>
