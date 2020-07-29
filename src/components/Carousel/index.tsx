@@ -1,4 +1,6 @@
 import React from 'react';
+import Slider from './components/Slider';
+
 import VideoCard from './components/VideoCard';
 
 import * as S from './styles';
@@ -28,7 +30,6 @@ const VideoCardGroup = (props: ComponentProps) => {
   const categoryExtraLink = category.extraLink;
   const videos = category.videos;
 
-  console.log(category)
   return (
     <S.VideoCardGroupContainer>
       {categoryTitle && (
@@ -43,23 +44,23 @@ const VideoCardGroup = (props: ComponentProps) => {
           }
         </>
       )}
-      <S.VideoCardList>
+      <Slider>
         {videos.map((video: VideoProps, index: number) => {
           if (ignoreFirstVideo && index === 0) {
             return null;
           }
 
           return (
-            <li key={video.title}>
+            <S.SliderItem key={video.title}>
               <VideoCard
                 videoTitle={video.title}
                 videoURL={video.url}
                 categoryColor={categoryColor}
               />
-            </li>
+            </S.SliderItem>
           );
         })}
-      </S.VideoCardList>
+      </Slider>
     </S.VideoCardGroupContainer>
   );
 }
