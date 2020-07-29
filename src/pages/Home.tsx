@@ -1,18 +1,15 @@
 //@ts-nocheck
 import React from 'react';
 
-import dadosIniciais from './data/dados_iniciais.json';
+import dadosIniciais from '../data/dados_iniciais.json';
 
-import Menu from './components/Menu';
-import BannerMain from './components/BannerMain';
-import Carousel from './components/Carousel';
-import Footer from './components/Footer';
+import Layout from '../components/layout';
+import BannerMain from '../components/BannerMain';
+import Carousel from '../components/Carousel';
 
 const App = () => {
   return (
-    <div style={{ background: 'rgb(20, 20, 20)' }}>
-      <Menu />
-    
+    <Layout>    
       <BannerMain
         videoTitle={dadosIniciais.categorias[0].videos[0].title}
         url={dadosIniciais.categorias[0].videos[0].url}
@@ -25,9 +22,7 @@ const App = () => {
           category={item}
         />
       ))}
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 

@@ -11,7 +11,7 @@ const Menu = () => {
         <S.Logo src={Logo} alt="MocarizFlix logo" />
       </a>
 
-      <ButtonLink className="ButtonLink">
+      <ButtonLink className="ButtonLink" href="/register/video">
         Novo vídeo
       </ButtonLink>
     </S.Nav>

@@ -3,13 +3,13 @@ import * as S from './styled';
 
 export interface ComponentProps {
   className?: string;
-  href?: string | '/';
+  href: string;
   children: any;
 }
 
 const ButtonLink = (props: ComponentProps) => {
   return (
-    <S.ButtonLink className={props.className} href={props.href}>
+    <S.ButtonLink className={props.className} to={props.href}>
       {props.children}
     </S.ButtonLink>
   );
