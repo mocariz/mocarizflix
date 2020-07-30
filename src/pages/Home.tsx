@@ -11,14 +11,14 @@ const App = () => {
   return (
     <Layout>    
       <BannerMain
-        videoTitle={dadosIniciais.categorias[0].videos[0].title}
-        url={dadosIniciais.categorias[0].videos[0].url}
-        videoDescription="O que faz uma desenvolvedora front-end?"
+        videoTitle={dadosIniciais.categorias[0].extraLink.text}
+        url={dadosIniciais.categorias[0].extraLink.url}
+        youTubeID={dadosIniciais.categorias[0].extraLink.backgroundImgYouTubeID}
+        videoDescription="The story of Hong Gil-dong's life, love, and battle history in an era of violence."
       />
 
       {dadosIniciais.categorias.map((item: any) => (
         <Carousel 
-          ignoreFirstVideo
           category={item}
         />
       ))}

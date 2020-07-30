@@ -7,6 +7,7 @@ export interface ComponentProps {
   videoTitle: string;
   videoDescription: string;
   url: string;
+  youTubeID?: string
 }
 
 const BannerMain = (props: ComponentProps) => {
@@ -19,7 +20,9 @@ const BannerMain = (props: ComponentProps) => {
     }
     
   const youTubeID = getYouTubeId(props.url);
-  const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
+  const bgYouTubeID = props.youTubeID ? props.youTubeID : youTubeID;
+
+  const bgUrl = `https://img.youtube.com/vi/${bgYouTubeID}/maxresdefault.jpg`;
   
   return (
     <S.BannerMainContainer backgroundImage={bgUrl}>

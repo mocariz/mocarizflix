@@ -1,183 +1,181 @@
 {
   "categorias": [
     {
-      "title": "Front End",
-      "link": "https://www.alura.com.br/formacao-front-end",
+      "title": "Costume & Period",
+      "link": "https://www.viki.com/explore?genre=costume-period",
       "color": "#6BD1FF",
       "extraLink": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "Rebel: Thief Who Stole the People",
+        "url": "https://www.youtube.com/watch?v=w735GoKCfqE",
+        "backgroundImgYouTubeID": "JOFS1no9NoI"
       },
       "videos": [
         {
-          "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+          "title": "Story of Yanxi Palace",
+          "url": "https://www.youtube.com/watch?v=ZxN4oQkweNQ"
         },
         {
-          "title": "SEO com React",
-          "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+          "title": "Empress Ki",
+          "url": "https://www.youtube.com/watch?v=sfJ6zv83-3o"
         },
         {
-          "title": "Componentização com VanillaJS #AluraMais",
-          "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+          "title": "Jewel in the Crown",
+          "url": "https://www.youtube.com/watch?v=pgjHPVbLTpQ"
         },
         {
-          "title": "Pare de chutar e aprenda a display: inline #01",
-          "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+          "title": "Hwangjini",
+          "url": "https://www.youtube.com/watch?v=db1rAvm1L7Y"
         },
         {
-          "title": "Template String: Interpolando strings com JavaScript #AluraMais",
-          "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+          "title": "The Story of Ming Lan",
+          "url": "https://www.youtube.com/watch?v=yzXPV4X2b0s"
         },
         {
-          "title": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
+          "title": "The Moon Embracing the Sun",
+          "url": "https://www.youtube.com/watch?v=z4nP601FRyk"
         },
         {
-          "title": "Novidades do Angular v9",
-          "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
+          "title": "Queen for Seven Days",
+          "url": "https://www.youtube.com/watch?v=E9-N22tB6Bw"
         },
         {
-          "title": "Base para aprender os frameworks",
-          "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
-        }        
+          "title": "Six Flying Dragons",
+          "url": "https://www.youtube.com/watch?v=wd2vdTVBuvg"
+        }      
       ]
     },
     {
-      "title": "Back End",
+      "title": "Crime & Mystery",
+      "link": "https://www.viki.com/explore?genre=crime-mystery",
       "color": "#00C86F",
-      "extraLink": {
-        "text": "Cursos de Back End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-programacao"
-      },
       "videos": [
         {
-          "title": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-          "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+          "title": "Lawless Lawyer",
+          "url": "https://www.youtube.com/watch?v=putd3N8lCF4"
         },
         {
-          "title": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
-          "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+          "title": "The Girl Who Sees Smells",
+          "url": "https://www.youtube.com/watch?v=NqPjFpFN7m8"
         },
         {
-          "title": "Programei 4 robôs que criam vídeos para mim no YouTube",
-          "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
-        },
-        {
-          "title": "API: Dicionário do Programador",
-          "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
+          "title": "Mask",
+          "url": "https://www.youtube.com/watch?v=xsmvRY9hiK4"
         }, 
         {
-          "title": "Usando Git Direito",
-          "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+          "title": "Bad Guys",
+          "url": "https://www.youtube.com/watch?v=ZXMY2qNupIw"
+        },
+        {
+          "title": "Doctor Stranger",
+          "url": "https://www.youtube.com/watch?v=ZBjdGi8HCQM"
+        },
+        {
+          "title": "Love Me If You Dare",
+          "url": "https://www.youtube.com/watch?v=CUTjS91YIUc"
         }
       ]
     },
     {
-      "title": "Data Science e Inteligência Artificial",
+      "title": "Romantic Comedy",
+      "link": "https://www.viki.com/explore?genre=romantic-comedy",
       "color": "#9cd33b",
-      "extraLink": {
-        "text": "Cursos de Data Science na Alura",
-        "url": "https://www.alura.com.br/formacao-data-science"
-      },
       "videos": [
         {
-          "title": "Teste de Turing",
-          "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
+          "title": "What’s Wrong With Secretary Kim",
+          "url": "https://www.youtube.com/watch?v=1xh8cujxUGs"
         },
         {
-          "title": "O que é Data Science?",
-          "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
+          "title": "Strong Woman Do Bong Soon",
+          "url": "https://www.youtube.com/watch?v=znds8S2kKg4"
         },
         {
-          "title": "Melhor forma de aprender Python",
-          "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+          "title": "Weightlifting Fairy, Kim Bok-joo",
+          "url": "https://www.youtube.com/watch?v=AMIStQUvc7s"
         },
         {
-          "title": "Como ingressar no mercado de Data Science?",
-          "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
+          "title": "Hotel Del Luna",
+          "url": "https://www.youtube.com/watch?v=lJ3_1v8sB48"
+        },
+        {
+          "title": "1% of Something",
+          "url": "https://www.youtube.com/watch?v=dLehf60huFo"
+        },
+        {
+          "title": "Marriage, Not Dating",
+          "url": "https://www.youtube.com/watch?v=WhhONoZ6q5o"
+        },
+        {
+          "title": "Who Are You",
+          "url": "https://www.youtube.com/watch?v=YoqXPE6qTzo"
         }
       ]
     },
     {
-      "title": "Filmes",
+      "title": "Fantasy",
+      "link": "https://www.viki.com/explore?genre=fantasy",
       "color": "orange",
       "videos": [
         {
-          "title": "Interestellar",
-          "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+          "title": "Goblin",
+          "url": "https://www.youtube.com/watch?v=S94ukM8C17A"
         },
         {
-          "title": "Gattaca",
-          "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+          "title": "The Legend of the Blue Sea",
+          "url": "https://www.youtube.com/watch?v=8IjOQCN285g"
         },
         {
-          "title": "A Chegada",
-          "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+          "title": "My Love From the Star",
+          "url": "https://www.youtube.com/watch?v=AyQVdUxCA9E"
         },
         {
-          "title": "Feitiço do Tempo",
-          "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+          "title": "W",
+          "url": "https://www.youtube.com/watch?v=KK-56SxTm_c"
         }
       ]
     },
     {
-      "title": "Games",
+      "title": "Mainland China",
+      "link": "https://www.viki.com/explore?country=mainland-china",
       "color": "red",
-      "extraLink": {
-        "text": "Formação de Jogos na Alura",
-        "url": "https://www.alura.com.br/formacao-jogos-unity"
-      },
       "videos": [
         {
-          "title": "Final Fantasy 7",
-          "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+          "title": "Love O2O",
+          "url": "https://www.youtube.com/watch?v=tiiN4rDwa8g"
         },
         {
-          "title": "Assassins Creed Valhalla",
-          "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
+          "title": "Go Go Squid!",
+          "url": "https://www.youtube.com/watch?v=jZZgDL5ID4Y"
         },
         {
-          "title": "God of War 4",
-          "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+          "title": "Because of Meeting You",
+          "url": "https://www.youtube.com/watch?v=5QtmCIRsq8Q"
         },
         {
-          "title": "Resident Evil 8",
-          "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
-        },
-        {
-          "title": "Pokémon Let's Go Pikachu/Eevee",
-          "url": "https://www.youtube.com/watch?v=L56q_k2ydrs"
+          "title": "Put Your Head On My Shoulder",
+          "url": "https://www.youtube.com/watch?v=qSruSMJACmg"
         }
       ]
     },
     {
-      "title": "Aprendendo a aprender tecnologia",
+      "title": "Melodrama",
+      "link": "https://www.viki.com/explore?genre=melodrama",
       "color": "#6b5be2",
-      "extraLink": {
-        "text": "Curso sobre aprendizado na Alura",
-        "url": "https://alura.com.br/curso-online-aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento"
-      },
       "videos": [
         {
-          "title": "Como estudar melhor?",
-          "url": "https://www.youtube.com/watch?v=Is6c9KSGCbk&feature=youtu.be"
+          "title": "Tempted",
+          "url": "https://www.youtube.com/watch?v=XyBXbYYSFiw"
         },
         {
-          "title": "Faculdade",
-          "url": "https://www.youtube.com/watch?v=jw06H8esyzQ&feature=youtu.be"
+          "title": "Descendants of the Sun",
+          "url": "https://www.youtube.com/watch?v=wkHjOTFv60g"
         },
         {
-          "title": "Frameworks",
-          "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
+          "title": "It’s Okay, That’s Love",
+          "url": "https://www.youtube.com/watch?v=IM-6ZqJURcI"
         },
         {
-          "title": "A mágica do Aprendizado",
-          "url": "https://www.youtube.com/watch?v=oTEXzpfEpPY"
-        },
-        {
-          "title": "Como aprender a programar?",
-          "url": "https://www.youtube.com/watch?v=MwCx2qKdbDw&feature=youtu.be"
+          "title": "Secret Garden",
+          "url": "https://www.youtube.com/watch?v=_6mdPDisVt0"
         }
       ]
     }

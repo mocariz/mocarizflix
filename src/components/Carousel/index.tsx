@@ -27,7 +27,6 @@ const VideoCardGroup = (props: ComponentProps) => {
   const { category, ignoreFirstVideo } = props;
   const categoryTitle = category.title;
   const categoryColor = category.color;
-  const categoryExtraLink = category.extraLink;
   const videos = category.videos;
 
   return (
@@ -37,11 +36,6 @@ const VideoCardGroup = (props: ComponentProps) => {
           <S.Title style={{ backgroundColor: categoryColor || 'red' }}>
             {categoryTitle}
           </S.Title>
-          {categoryExtraLink && 
-            <S.ExtraLink href={categoryExtraLink.url} target="_blank">
-              {categoryExtraLink.text}  
-            </S.ExtraLink>
-          }
         </>
       )}
       <Slider>
