@@ -6,16 +6,9 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
 import Layout from '../../components/layout';
 import TextField from '../../components/TextField';
+import Table from '../../components/Table';
 
 const Page = () => {
   const [categories, setCategories] = useState([]);
@@ -73,7 +66,7 @@ const Page = () => {
     <Layout>
       <Container>
         <Grid container>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ padding: '50px 0'}}>
             <Typography gutterBottom align="center" variant="h2">Cadastro de Categoria</Typography>
           </Grid>
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
@@ -151,26 +144,12 @@ const Page = () => {
             </Grid>
           </form>
 
-          <Grid item xs={12}>
-            <TableContainer component={Paper}>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Nome</TableCell>
-                    <TableCell>Descrição</TableCell>
-                    <TableCell></TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {categories.map((item: any) => (
-                    <TableRow key={item.id}>
-                      <TableCell>{item.title}</TableCell>
-                      <TableCell>{item.color}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+          <Grid item xs={12} style={{ padding: '50px 0'}}>
+            <Table
+              headers={["Nome"]}
+              data={categories}
+              prefix="category"
+            />
           </Grid>
         </Grid>
       </Container>
