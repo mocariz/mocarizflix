@@ -1,0 +1,45 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Costume & Period",
+      "link": "https://www.viki.com/explore?genre=costume-period",
+      "color": "#6BD1FF",
+      "extraLink": {
+        "text": "Rebel: Thief Who Stole the People",
+        "url": "https://www.youtube.com/watch?v=w735GoKCfqE",
+        "backgroundImgYouTubeID": "JOFS1no9NoI"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Crime & Mystery",
+      "link": "https://www.viki.com/explore?genre=crime-mystery",
+      "color": "#00C86F"
+    },
+    {
+      "id": 3,
+      "title": "Romantic Comedy",
+      "link": "https://www.viki.com/explore?genre=romantic-comedy",
+      "color": "#9cd33b"
+    },
+    {
+      "id": 4,
+      "title": "Fantasy",
+      "link": "https://www.viki.com/explore?genre=fantasy",
+      "color": "orange"
+    },
+    {
+      "id": 5,
+      "title": "Mainland China",
+      "link": "https://www.viki.com/explore?country=mainland-china",
+      "color": "red"
+    },
+    {
+      "id": 6,
+      "title": "Melodrama",
+      "link": "https://www.viki.com/explore?genre=melodrama",
+      "color": "#6b5be2"
+    }
+  ]
+}

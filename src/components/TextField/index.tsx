@@ -7,6 +7,7 @@ export interface ComponentProps {
   type: 'text' | 'color' | 'textarea';
   onChange: (field: any, value: any) => void;
   id: string;
+  required?: boolean;
 }
 
 const Component = (props: ComponentProps) => {
@@ -22,6 +23,7 @@ const Component = (props: ComponentProps) => {
       fullWidth
       multiline={props.type === 'textarea'}
       rows={3}
+      required={props.required}
     />
   )
 }

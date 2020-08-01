@@ -6,6 +6,14 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
 import Layout from '../../components/layout';
 import TextField from '../../components/TextField';
 
@@ -14,12 +22,17 @@ const Page = () => {
   const [values, setValues] = useState({
     name: '',
     color: '#581F6E',
-    description: ''
+    link: '',
+    extraLink: {
+      text: '',
+      url: '',
+      backgroundImgYouTubeID: ''
+    }
   });
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:8080/categorias';
+      const URL = 'http://localhost:8080/categories';
       fetch(URL)
         .then(async (response) => {
           if (response.ok) {
@@ -33,10 +46,21 @@ const Page = () => {
   }, [])
 
   const handleChange = (field: string, value: string) => {
-    setValues({
-      ...values,
-      [field]: value
-    })
+    if (field.includes('.')) {
+      const fields = field.split('.');
+      setValues({
+        ...values,
+        [fields[0]]: {
+          ...values.extraLink,
+          [fields[1]]: value
+        }
+      })
+    } else {
+      setValues({
+        ...values,
+        [field]: value
+      })
+    }
   }
 
   const handleSubmit = (event: any) => {
@@ -61,6 +85,7 @@ const Page = () => {
                   value={values.name}
                   type="text"
                   onChange={handleChange}
+                  required
                 />
               </Grid>
               <Grid item xs={2} md={1}>
@@ -70,17 +95,51 @@ const Page = () => {
                   type="color"
                   value={values.color}
                   onChange={handleChange}
+                  required
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  id="description"
-                  label="Descrição"
-                  type="textarea"
-                  value={values.description}
+                  id="link"
+                  label="Url"
+                  type="text"
+                  required
+                  value={values.link}
                   onChange={handleChange}
                 />
               </Grid>
+              <Grid item xs={12}>
+                Extra Link
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  id="extraLink.text"
+                  label="Titulo"
+                  type="text"
+                  value={values.extraLink.text}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={8}>
+                <TextField
+                  id="extraLink.url"
+                  label="Video Url"
+                  type="text"
+                  value={values.extraLink.url}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={4}>
+                <TextField
+                  id="extraLink.backgroundImgYouTubeID"
+                  label="Id do video do Youtube que será a capa"
+                  type="text"
+                  value={values.extraLink.backgroundImgYouTubeID}
+                  onChange={handleChange}
+                />
+              </Grid>
+
               <Grid item xs={12} justify="space-between" style={{ display: 'flex' }}>
                 <Button component={Link} to="/" variant="contained">
                   Voltar
@@ -91,6 +150,28 @@ const Page = () => {
               </Grid>
             </Grid>
           </form>
+
+          <Grid item xs={12}>
+            <TableContainer component={Paper}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Nome</TableCell>
+                    <TableCell>Descrição</TableCell>
+                    <TableCell></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {categories.map((item: any) => (
+                    <TableRow key={item.id}>
+                      <TableCell>{item.title}</TableCell>
+                      <TableCell>{item.color}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
         </Grid>
       </Container>
     </Layout>
