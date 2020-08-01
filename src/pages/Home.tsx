@@ -1,5 +1,6 @@
 //@ts-nocheck
 import React from 'react';
+import Container from '@material-ui/core/Container';
 
 import dadosIniciais from '../data/dados_iniciais.json';
 
@@ -17,13 +18,13 @@ const App = () => {
         videoDescription="The story of Hong Gil-dong's life, love, and battle history in an era of violence."
       />
 
-      <div className="container">
+      <Container>
         {dadosIniciais.categorias.map((item: any) => (
           <Carousel
             category={item}
           />
         ))}
-      </div>
+      </Container>
     </Layout>
   );
 }

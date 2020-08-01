@@ -13,22 +13,17 @@ const Main = styled.main`
   background-color: var(--black);
   color: var(--white);
   flex: 1;
-
-  .container {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
 `;
 
 const Layout = (props: ComponentProps) => {
   return (
     <>
       <Menu />
-      
+
       <Main>
         {props.children}
       </Main>
-      
+
       <Footer />
     </>
   )
