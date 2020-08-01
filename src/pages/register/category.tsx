@@ -32,7 +32,7 @@ const Page = () => {
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:8080/categories';
+      const URL = 'https://mocarizflix.herokuapp.com/categories';
       fetch(URL)
         .then(async (response) => {
           if (response.ok) {
