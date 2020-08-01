@@ -134,7 +134,7 @@ const Page = () => {
               </Grid>
 
               <Grid item xs={12} justify="space-between" style={{ display: 'flex' }}>
-                <Button component={Link} to="/" variant="contained">
+                <Button component={Link} to="/register/video" variant="contained">
                   Voltar
                 </Button>
                 <Button type="submit" variant="contained" color="primary">
