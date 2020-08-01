@@ -7,24 +7,26 @@ import Layout from '../../components/layout';
 const Page = () => {
   return (
     <Layout>
-      <h1>Cadastro de Categoria</h1>
+      <div className="container">
+        <h1>Cadastro de Categoria</h1>
 
-      <form>
-        <label>
-          Nome da Categoria:
-          <input
-            type="text"
-          />
-        </label>
+        <form>
+          <label>
+            Nome da Categoria:
+            <input
+              type="text"
+            />
+          </label>
 
-        <button>
-          Cadastrar
-        </button>
-      </form>
+          <button>
+            Cadastrar
+          </button>
+        </form>
 
-      <Link to="/">
-        Ir para home
-      </Link>
+        <Link to="/">
+          Ir para home
+        </Link>
+      </div>
     </Layout>
   )
 }

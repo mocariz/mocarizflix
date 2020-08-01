@@ -24,7 +24,6 @@ body {
 
 body {
   padding-top: var(--bodyPaddingTop);
-  background: rgb(20, 20, 20);
 }
 
 @media (max-width: 800px) {

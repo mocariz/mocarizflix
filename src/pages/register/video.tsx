@@ -7,11 +7,13 @@ import Layout from '../../components/layout';
 const Page = () => {
   return (
     <Layout>
-      <h1>Cadastro de Video</h1>
+      <div className="container">
+        <h1>Cadastro de Video</h1>
 
-      <Link to="/register/category">
-        Cadastrar Categoria
-      </Link>
+        <Link to="/register/category">
+          Cadastrar Categoria
+        </Link>
+      </div>
     </Layout>
   )
 }

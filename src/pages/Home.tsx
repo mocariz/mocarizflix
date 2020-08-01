@@ -9,7 +9,7 @@ import Carousel from '../components/Carousel';
 
 const App = () => {
   return (
-    <Layout>    
+    <Layout>
       <BannerMain
         videoTitle={dadosIniciais.categorias[0].extraLink.text}
         url={dadosIniciais.categorias[0].extraLink.url}
@@ -17,11 +17,13 @@ const App = () => {
         videoDescription="The story of Hong Gil-dong's life, love, and battle history in an era of violence."
       />
 
-      {dadosIniciais.categorias.map((item: any) => (
-        <Carousel 
-          category={item}
-        />
-      ))}
+      <div className="container">
+        {dadosIniciais.categorias.map((item: any) => (
+          <Carousel
+            category={item}
+          />
+        ))}
+      </div>
     </Layout>
   );
 }
