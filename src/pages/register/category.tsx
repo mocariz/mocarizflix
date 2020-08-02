@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { isEmpty, trim } from 'lodash';
+import { isEmpty, trim, pullAt, findIndex } from 'lodash';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -10,34 +10,36 @@ import Button from '@material-ui/core/Button';
 import Layout from '../../components/layout';
 import TextField from '../../components/TextField';
 import Table from '../../components/Table';
+import Backdrop from '../../components/Backdrop';
+
+const INITIAL_VALUES = {
+  name: '',
+  color: '#581F6E',
+  link: '',
+  extraLink: {
+    text: '',
+    url: '',
+    backgroundImgYouTubeID: ''
+  }
+};
 
 const Page = () => {
   const [categories, setCategories] = useState([]);
-  const [values, setValues] = useState({
-    name: '',
-    color: '#581F6E',
-    link: '',
-    extraLink: {
-      text: '',
-      url: '',
-      backgroundImgYouTubeID: ''
-    }
-  });
+  const [values, setValues] = useState(INITIAL_VALUES);
   const [validated, setValidated] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const URL = 'https://mocarizflix.herokuapp.com/categories';
 
   useEffect(() => {
-    if (window.location.href.includes('localhost')) {
-      const URL = 'https://mocarizflix.herokuapp.com/categories';
-      fetch(URL)
-        .then(async (response) => {
-          if (response.ok) {
-            const items = await response.json();
-            setCategories(items);
-            return;
-          }
-          throw new Error('Failed to retrieve categories list');
-        });
-    }
+    fetch(URL)
+      .then(async (response) => {
+        if (response.ok) {
+          const items = await response.json();
+          setCategories(items);
+          return;
+        }
+        throw new Error('Failed to retrieve categories list');
+      });
   }, [])
 
   const handleChange = (field: string, value: string) => {
@@ -61,10 +63,55 @@ const Page = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setValidated(true);
-    console.log(values);
 
+    if (event.target.checkValidity()) {
+      onCreateCategory();
+    }
   }
 
+  const onCreateCategory = () => {
+    setIsLoading(true);
+
+    fetch(URL, {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(values)
+    }).then(async (response) => {
+      setIsLoading(false);
+      setValidated(false);
+
+      if (response.ok) {
+        const data = await response.json();
+        //@ts-ignore
+        setCategories([
+          ...categories,
+          data
+        ]);
+        setValues(INITIAL_VALUES);
+        return;
+      }
+
+      // todo notistack
+      // throw new Error('Failed to create a new categorie');
+    });
+  }
+
+  const onRemoveCategory = (categoryId: number) => {
+    fetch(`${URL}/${categoryId}`, {
+      method: 'DELETE',
+    }).then(async (response) => {
+      if (response.ok) {
+        //@ts-ignore
+        const index = findIndex(categories, { id: categoryId });
+        pullAt(categories, [index]);
+        setCategories([...categories]);
+        return;
+      }
+      throw new Error('Failed to remove categorie');
+    });
+  }
+
+  console.log(validated)
   return (
     <Layout>
       <Container>
@@ -153,11 +200,14 @@ const Page = () => {
             <Table
               headers={["Nome"]}
               data={categories}
+              onDelete={onRemoveCategory}
               prefix="category"
             />
           </Grid>
         </Grid>
       </Container>
+
+      <Backdrop show={isLoading} />
     </Layout>
   )
 }

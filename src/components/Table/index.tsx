@@ -13,6 +13,7 @@ export interface ComponentProps {
   headers: Array<string>;
   data: Array<{ id: number, title: string }>
   prefix: string;
+  onDelete: (id: number) => void;
 }
 
 const Component = (props: ComponentProps) => {
@@ -30,12 +31,12 @@ const Component = (props: ComponentProps) => {
         <TableBody>
           {props.data.map((item: any) => (
             <TableRow key={item.id}>
-              <TableCell>{item.title}</TableCell>
+              <TableCell>{item.name}</TableCell>
               <TableCell align="center">
                 <IconButton aria-label="edit" color="primary">
                   <EditIcon />
                 </IconButton>
-                <IconButton aria-label="delete" color="secondary">
+                <IconButton aria-label="delete" color="secondary" onClick={() => props.onDelete(item.id)}>
                   <DeleteIcon />
                 </IconButton>
               </TableCell>
