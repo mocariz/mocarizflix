@@ -2,7 +2,7 @@
   "categories": [
     {
       "id": 1,
-      "title": "Costume & Period",
+      "name": "Costume & Period",
       "link": "https://www.viki.com/explore?genre=costume-period",
       "color": "#6BD1FF",
       "extraLink": {
@@ -13,31 +13,31 @@
     },
     {
       "id": 2,
-      "title": "Crime & Mystery",
+      "name": "Crime & Mystery",
       "link": "https://www.viki.com/explore?genre=crime-mystery",
       "color": "#00C86F"
     },
     {
       "id": 3,
-      "title": "Romantic Comedy",
+      "name": "Romantic Comedy",
       "link": "https://www.viki.com/explore?genre=romantic-comedy",
       "color": "#9cd33b"
     },
     {
       "id": 4,
-      "title": "Fantasy",
+      "name": "Fantasy",
       "link": "https://www.viki.com/explore?genre=fantasy",
       "color": "orange"
     },
     {
       "id": 5,
-      "title": "Mainland China",
+      "name": "Mainland China",
       "link": "https://www.viki.com/explore?country=mainland-china",
       "color": "red"
     },
     {
       "id": 6,
-      "title": "Melodrama",
+      "name": "Melodrama",
       "link": "https://www.viki.com/explore?genre=melodrama",
       "color": "#6b5be2"
     }
