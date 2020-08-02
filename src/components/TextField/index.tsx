@@ -12,7 +12,6 @@ export interface ComponentProps {
 }
 
 const Component = (props: ComponentProps) => {
-  console.log(props)
   return (
     <S.Field
       id={props.id}
