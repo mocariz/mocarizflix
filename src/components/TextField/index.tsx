@@ -8,9 +8,11 @@ export interface ComponentProps {
   onChange: (field: any, value: any) => void;
   id: string;
   required?: boolean;
+  error?: boolean;
 }
 
 const Component = (props: ComponentProps) => {
+  console.log(props)
   return (
     <S.Field
       id={props.id}
@@ -24,6 +26,8 @@ const Component = (props: ComponentProps) => {
       multiline={props.type === 'textarea'}
       rows={3}
       required={props.required}
+      error={props.error}
+      helperText={props.error ? 'Campo obrigatório' : ''}
     />
   )
 }

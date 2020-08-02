@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { isEmpty, trim } from 'lodash';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -22,6 +23,7 @@ const Page = () => {
       backgroundImgYouTubeID: ''
     }
   });
+  const [validated, setValidated] = useState(false);
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
@@ -58,8 +60,9 @@ const Page = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-
+    setValidated(true);
     console.log(values);
+
   }
 
   return (
@@ -69,7 +72,7 @@ const Page = () => {
           <Grid item xs={12} style={{ padding: '50px 0'}}>
             <Typography gutterBottom align="center" variant="h2">Cadastro de Categoria</Typography>
           </Grid>
-          <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+          <form noValidate onSubmit={handleSubmit} style={{ width: '100%' }}>
             <Grid container spacing={2}>
               <Grid item xs={10} md={11}>
                 <TextField
@@ -79,6 +82,7 @@ const Page = () => {
                   type="text"
                   onChange={handleChange}
                   required
+                  error={validated && isEmpty(trim(values.name))}
                 />
               </Grid>
               <Grid item xs={2} md={1}>
@@ -99,10 +103,11 @@ const Page = () => {
                   required
                   value={values.link}
                   onChange={handleChange}
+                  error={validated && isEmpty(trim(values.link))}
                 />
               </Grid>
               <Grid item xs={12}>
-                Extra Link
+                Configurações do Banner
               </Grid>
 
               <Grid item xs={12}>

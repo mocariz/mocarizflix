@@ -10,8 +10,7 @@ export interface ComponentProps {
 
 
 const Main = styled.main`
-  background-color: var(--black);
-  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.9);
   color: var(--white);
   flex: 1;
 `;
