@@ -24,6 +24,7 @@ const VideoCard = (props: ComponentProps) => {
       url={image}
       href={props.videoURL}
       target="_blank"
+      rel="noopener"
       style={{ borderColor: props.categoryColor || 'red' }}
       title={props.videoTitle}
     />
