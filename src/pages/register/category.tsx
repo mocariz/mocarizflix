@@ -12,6 +12,8 @@ import TextField from '../../components/TextField';
 import Table from '../../components/Table';
 import Backdrop from '../../components/Backdrop';
 
+import useForm from '../../services/useForm';
+
 const INITIAL_VALUES = {
   name: '',
   color: '#581F6E',
@@ -25,13 +27,12 @@ const INITIAL_VALUES = {
 
 const Page = () => {
   const [categories, setCategories] = useState([]);
-  const [values, setValues] = useState(INITIAL_VALUES);
   const [validated, setValidated] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const URL = 'https://mocarizflix.herokuapp.com/categories';
+  const { values, handleChange, clearForm } = useForm(INITIAL_VALUES);
 
   useEffect(() => {
-    fetch(URL)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/categories`)
       .then(async (response) => {
         if (response.ok) {
           const items = await response.json();
@@ -41,24 +42,6 @@ const Page = () => {
         throw new Error('Failed to retrieve categories list');
       });
   }, [])
-
-  const handleChange = (field: string, value: string) => {
-    if (field.includes('.')) {
-      const fields = field.split('.');
-      setValues({
-        ...values,
-        [fields[0]]: {
-          ...values.extraLink,
-          [fields[1]]: value
-        }
-      })
-    } else {
-      setValues({
-        ...values,
-        [field]: value
-      })
-    }
-  }
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -72,7 +55,7 @@ const Page = () => {
   const onCreateCategory = () => {
     setIsLoading(true);
 
-    fetch(URL, {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/categories`, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(values)
@@ -87,7 +70,7 @@ const Page = () => {
           ...categories,
           data
         ]);
-        setValues(INITIAL_VALUES);
+        clearForm();
         return;
       }
 
@@ -97,7 +80,7 @@ const Page = () => {
   }
 
   const onRemoveCategory = (categoryId: number) => {
-    fetch(`${URL}/${categoryId}`, {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/categories/${categoryId}`, {
       method: 'DELETE',
     }).then(async (response) => {
       if (response.ok) {
@@ -111,7 +94,6 @@ const Page = () => {
     });
   }
 
-  console.log(validated)
   return (
     <Layout>
       <Container>

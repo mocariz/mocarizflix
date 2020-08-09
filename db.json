@@ -41,5 +41,55 @@
       "link": "https://www.viki.com/explore?genre=melodrama",
       "color": "#6b5be2"
     }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "Story of Yanxi Palace",
+      "url": "https://www.youtube.com/watch?v=ZxN4oQkweNQ",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "Empress Ki",
+      "url": "https://www.youtube.com/watch?v=sfJ6zv83-3o",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "title": "Jewel in the Crown",
+      "url": "https://www.youtube.com/watch?v=pgjHPVbLTpQ",
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "title": "Hwangjini",
+      "url": "https://www.youtube.com/watch?v=db1rAvm1L7Y",
+      "categoryId": 1
+    },
+    {
+      "id": 5,
+      "title": "The Story of Ming Lan",
+      "url": "https://www.youtube.com/watch?v=yzXPV4X2b0s",
+      "categoryId": 1
+    },
+    {
+      "id": 6,
+      "title": "The Moon Embracing the Sun",
+      "url": "https://www.youtube.com/watch?v=z4nP601FRyk",
+      "categoryId": 1
+    },
+    {
+      "id": 7,
+      "title": "Queen for Seven Days",
+      "url": "https://www.youtube.com/watch?v=E9-N22tB6Bw",
+      "categoryId": 1
+    },
+    {
+      "id": 8,
+      "title": "Six Flying Dragons",
+      "url": "https://www.youtube.com/watch?v=wd2vdTVBuvg",
+      "categoryId": 1
+    }
   ]
 }

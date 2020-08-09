@@ -23,7 +23,7 @@ const Component = (props: ComponentProps) => {
         <S.Head>
           <TableRow>
             {props.headers.map((item: string) => (
-              <TableCell>{item}</TableCell>
+              <TableCell key={item}>{item}</TableCell>
             ))}
             <TableCell width={'15%'}></TableCell>
           </TableRow>
