@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Mocariz Fliz",
+  "name": "Mocariz Fliz",
+  "description": "Projeto Mocariz Fliz, uma coleção de vídeos das séries asiáticas preferidas",
   "icons": [
     {
       "src": "favicon.ico",
