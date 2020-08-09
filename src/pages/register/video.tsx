@@ -12,7 +12,8 @@ import TextField from '../../components/TextField';
 import Backdrop from '../../components/Backdrop';
 import Autocomplete from '../../components/Autocomplete';
 
-import useForm from '../../services/useForm';
+import useForm  from '../../services/useForm';
+import API      from '../../services/api';
 
 const INITIAL_VALUES = {
   title: '',
@@ -37,22 +38,15 @@ const Page = () => {
   const onCreate = () => {
     setIsLoading(true);
 
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/videos`, {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(values)
-    }).then(async (response) => {
-      setIsLoading(false);
-      setValidated(false);
-
-      if (response.ok) {
+    API.create('videos', values)
+      .then((response) => {
+        setIsLoading(false);
+        setValidated(false);
         clearForm();
-        return;
-      }
-
-      // todo notistack
-      // throw new Error('Failed to create a new categorie');
-    });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }
 
   return (

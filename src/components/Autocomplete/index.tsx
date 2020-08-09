@@ -3,6 +3,7 @@ import { find } from 'lodash';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import API from '../../services/api';
 import * as S from './styled';
 
 export interface ComponentProps {
@@ -18,16 +19,14 @@ const Component = (props: ComponentProps) => {
   const [value, setValue] = useState({ name: '', id: 0 });
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/categories`)
-      .then(async (response) => {
-        if (response.ok) {
-          const items = await response.json();
-          setCategories(items);
-          setIsLoading(false);
-          getValueOption();
-          return;
-        }
-        throw new Error('Failed to retrieve categories list');
+    API.getAll('categories')
+      .then((data) => {
+        setCategories(data);
+        setIsLoading(false);
+        getValueOption();
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   }, [])
 
@@ -39,7 +38,6 @@ const Component = (props: ComponentProps) => {
   }
 
   const onChange = (event: any, value: any) => {
-    console.log(value)
     if (value && value.id) {
       setValue(value);
       props.onChange(props.id, value.id);

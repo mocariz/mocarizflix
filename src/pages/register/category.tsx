@@ -12,7 +12,8 @@ import TextField from '../../components/TextField';
 import Table from '../../components/Table';
 import Backdrop from '../../components/Backdrop';
 
-import useForm from '../../services/useForm';
+import useForm  from '../../services/useForm';
+import API      from '../../services/api';
 
 const INITIAL_VALUES = {
   name: '',
@@ -32,14 +33,12 @@ const Page = () => {
   const { values, handleChange, clearForm } = useForm(INITIAL_VALUES);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/categories`)
-      .then(async (response) => {
-        if (response.ok) {
-          const items = await response.json();
-          setCategories(items);
-          return;
-        }
-        throw new Error('Failed to retrieve categories list');
+    API.getAll('categories')
+      .then((data) => {
+        setCategories(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   }, [])
 
@@ -55,42 +54,33 @@ const Page = () => {
   const onCreateCategory = () => {
     setIsLoading(true);
 
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/categories`, {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(values)
-    }).then(async (response) => {
-      setIsLoading(false);
-      setValidated(false);
+    API.create('categories', values)
+      .then((data) => {
+        setIsLoading(false);
+        setValidated(false);
 
-      if (response.ok) {
-        const data = await response.json();
-        //@ts-ignore
+         //@ts-ignore
         setCategories([
           ...categories,
           data
         ]);
         clearForm();
-        return;
-      }
-
-      // todo notistack
-      // throw new Error('Failed to create a new categorie');
+    })
+    .catch((err) => {
+      console.log(err.message);
     });
   }
 
   const onRemoveCategory = (categoryId: number) => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/categories/${categoryId}`, {
-      method: 'DELETE',
-    }).then(async (response) => {
-      if (response.ok) {
+    API.remove('categories', categoryId)
+      .then((response) => {
         //@ts-ignore
         const index = findIndex(categories, { id: categoryId });
         pullAt(categories, [index]);
         setCategories([...categories]);
-        return;
-      }
-      throw new Error('Failed to remove categorie');
+    })
+    .catch((err) => {
+      console.log(err.message);
     });
   }
 

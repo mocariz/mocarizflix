@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoIframeResponsive from './components/VideoIframeResponsive';
+import VideoIframeResponsive from '../VideoIframeResponsive';
 
 import * as S from './styles';
 
@@ -18,12 +18,12 @@ const BannerMain = (props: ComponentProps) => {
       '$7',
       );
     }
-    
+
   const youTubeID = getYouTubeId(props.url);
   const bgYouTubeID = props.youTubeID ? props.youTubeID : youTubeID;
 
   const bgUrl = `https://img.youtube.com/vi/${bgYouTubeID}/maxresdefault.jpg`;
-  
+
   return (
     <S.BannerMainContainer backgroundImage={bgUrl}>
       <S.ContentAreaContainer>
